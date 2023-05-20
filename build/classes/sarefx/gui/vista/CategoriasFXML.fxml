@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pnl_CategoriaCatalogo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sarefx.controlador.CategoriasController">
+   <children>
+      <Pane fx:id="pnl_busqueda" prefHeight="68.0" prefWidth="765.0">
+         <children>
+            <Label layoutX="14.0" layoutY="32.0" text="Código" />
+            <TextField fx:id="txt_buscar" layoutX="60.0" layoutY="24.0" prefHeight="32.0" prefWidth="166.0" />
+            <Button fx:id="btn_buscar" layoutX="518.0" layoutY="18.0" mnemonicParsing="false" onAction="#buscarIdCategoria" prefHeight="32.0" prefWidth="85.0" text="Buscar">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_limpiar" layoutX="636.0" layoutY="19.0" mnemonicParsing="false" onAction="#limpiar" prefHeight="32.0" prefWidth="68.0" text="Limpiar" />
+         </children>
+      </Pane>
+      <SplitPane dividerPositions="0.5" layoutX="-1.0" layoutY="63.0" orientation="VERTICAL" prefHeight="537.0" prefWidth="764.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="762.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorías">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="pnl_barraDeBotonesCategorias" layoutY="25.0" prefHeight="43.0" prefWidth="762.0">
+                     <children>
+                        <Button fx:id="btn_nuevaCategoria" layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#nuevaCategoria" prefHeight="32.0" prefWidth="68.0" text="Nueva" />
+                        <Button fx:id="btn_editarCategoria" layoutX="98.0" layoutY="6.0" mnemonicParsing="false" onAction="#editarCategoria" prefHeight="32.0" prefWidth="68.0" text="Editar" />
+                        <Button fx:id="btn_activarCategoria" layoutX="183.0" layoutY="6.0" mnemonicParsing="false" onAction="#activarCategoria" prefHeight="32.0" prefWidth="68.0" text="Activar" />
+                        <Button fx:id="btn_desactivarCategoria" layoutX="268.0" layoutY="6.0" mnemonicParsing="false" onAction="#desactivarCategoria" prefHeight="32.0" prefWidth="85.0" text="Desactivar" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tbl_categoria" layoutX="-1.0" layoutY="65.0" onMouseClicked="#clickTable" prefHeight="201.0" prefWidth="764.0">
+                    <columns>
+                      <TableColumn fx:id="tsl_categoriaIdCategoria" prefWidth="112.0" text="Id Categoria" />
+                      <TableColumn fx:id="tsl_categoriaNombre" prefWidth="233.0" text="Nombre" />
+                        <TableColumn fx:id="tsl_categoriaActivo" prefWidth="191.0" text="Activo" />
+                        <TableColumn fx:id="tsl_categoriaOrden" prefWidth="227.0" text="Orden" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="711.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catálogos">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="pnl_barraDeBotonesCatalogos" layoutY="23.0" prefHeight="43.0" prefWidth="762.0">
+                     <children>
+                        <Button fx:id="btn_nuevoC" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="68.0" text="Nuevo" />
+                        <Button fx:id="btn_editarC" layoutX="100.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="68.0" text="Editar" />
+                        <Button fx:id="btn_activarC" layoutX="189.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="68.0" text="Activar" />
+                        <Button fx:id="btn_desactivarC" layoutX="280.0" layoutY="10.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="85.0" text="Descactivar" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tbl_catalogo" layoutY="69.0" prefHeight="195.0" prefWidth="762.0">
+                    <columns>
+                      <TableColumn fx:id="tsl_catalogoIdCatalogo" prefWidth="112.0" text="Id Catalogo" />
+                      <TableColumn fx:id="tsl_catalogoNombre" prefWidth="333.0" text="Nombre" />
+                        <TableColumn fx:id="tsl_catalogoIdActivo" prefWidth="161.0" text="Activo" />
+                        <TableColumn fx:id="tsl_catalogoOrden" prefWidth="155.0" text="Orden" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>
